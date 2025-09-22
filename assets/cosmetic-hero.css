@@ -1,0 +1,300 @@
+/* Cosmetic Hero Section */
+.cosmetic-hero {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: var(--section-height, 800px);
+}
+
+.cosmetic-hero__container {
+  position: relative;
+  width: 100%;
+  height: var(--section-height, 800px);
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+/* Background Gradient */
+.cosmetic-hero__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, rgba(255, 218, 246, 1) 0%, rgba(237, 255, 218, 1) 100%);
+  z-index: 1;
+}
+
+/* Hero Image */
+.cosmetic-hero__image {
+  position: absolute;
+  top: 11px;
+  right: 0;
+  width: 1061px;
+  height: 782px;
+  z-index: 2;
+}
+
+.cosmetic-hero__image-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cosmetic-hero__image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  border: 2px dashed #ddd;
+}
+
+.cosmetic-hero__image-content {
+  text-align: center;
+  color: #666;
+}
+
+.cosmetic-hero__image-content h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.cosmetic-hero__image-content p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  color: #666;
+}
+
+/* Content Section */
+.cosmetic-hero__content {
+  position: absolute;
+  top: 258px;
+  left: 240px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 668px;
+}
+
+.cosmetic-hero__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.cosmetic-hero__heading {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 1.15625;
+  text-transform: uppercase;
+  color: #252525;
+  margin: 0;
+  width: 668px;
+}
+
+.cosmetic-hero__description {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.625;
+  color: #494949;
+  margin: 0;
+}
+
+/* Button */
+.cosmetic-hero__button-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.cosmetic-hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 32px;
+  background-color: #6a3d2d;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cosmetic-hero__button:hover {
+  background-color: #5a332a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(106, 61, 45, 0.3);
+}
+
+.cosmetic-hero__button-text {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.625;
+  color: #ffffff;
+  text-align: center;
+}
+
+.cosmetic-hero__button-icon {
+  width: 24px;
+  height: 24px;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+/* Carousel Indicators */
+.cosmetic-hero__indicators {
+  position: absolute;
+  bottom: 46px;
+  left: 925px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 3;
+}
+
+.cosmetic-hero__indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #8e8e8e;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.cosmetic-hero__indicator--active {
+  width: 22px;
+  height: 22px;
+  background-color: transparent;
+  border: 1px solid #252525;
+  position: relative;
+}
+
+.cosmetic-hero__indicator--active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #252525;
+}
+
+.cosmetic-hero__indicator:hover {
+  background-color: #252525;
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .cosmetic-hero__container {
+    height: auto;
+    min-height: 600px;
+  }
+
+  .cosmetic-hero__image {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 400px;
+    order: 1;
+  }
+
+  .cosmetic-hero__content {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 40px 20px;
+    max-width: 100%;
+    order: 2;
+  }
+
+  .cosmetic-hero__heading {
+    font-size: 48px;
+    width: 100%;
+  }
+
+  .cosmetic-hero__indicators {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    justify-content: center;
+    margin-top: 20px;
+    order: 3;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cosmetic-hero {
+    min-height: 500px;
+  }
+
+  .cosmetic-hero__container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .cosmetic-hero__image {
+    height: 300px;
+  }
+
+  .cosmetic-hero__content {
+    padding: 20px;
+    gap: 24px;
+  }
+
+  .cosmetic-hero__text-wrapper {
+    gap: 16px;
+  }
+
+  .cosmetic-hero__heading {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  .cosmetic-hero__description {
+    font-size: 14px;
+  }
+
+  .cosmetic-hero__button {
+    padding: 12px 24px;
+  }
+
+  .cosmetic-hero__button-text {
+    font-size: 14px;
+  }
+
+  .cosmetic-hero__button-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cosmetic-hero__heading {
+    font-size: 28px;
+  }
+
+  .cosmetic-hero__content {
+    padding: 15px;
+  }
+
+  .cosmetic-hero__button {
+    width: 100%;
+    justify-content: center;
+  }
+}

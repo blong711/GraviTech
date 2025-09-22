@@ -1,0 +1,147 @@
+{{ 'cosmetic-hero.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="cosmetic-hero"
+  id="cosmetic-hero-{{ section.id }}"
+  style="--section-height: {{ section.settings.section_height | default: 800 }}px;"
+>
+  <div class="cosmetic-hero__container">
+    <!-- Background Gradient -->
+    <div class="cosmetic-hero__background"></div>
+
+    <!-- Main Hero Image -->
+    <div class="cosmetic-hero__image">
+      {% if section.settings.hero_image %}
+        {{
+          section.settings.hero_image
+          | image_url: width: 1061
+          | image_tag: loading: 'lazy', class: 'cosmetic-hero__image-main', alt: section.settings.hero_image.alt
+        }}
+      {% else %}
+        <div class="cosmetic-hero__image-placeholder">
+          <div class="cosmetic-hero__image-content">
+            <h3>Beauty Products</h3>
+            <p>Upload your hero image</p>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Content Section -->
+    <div class="cosmetic-hero__content">
+      <div class="cosmetic-hero__text-wrapper">
+        {% if section.settings.heading %}
+          <h1 class="cosmetic-hero__heading">{{ section.settings.heading }}</h1>
+        {% else %}
+          <h1 class="cosmetic-hero__heading">
+            Care<br>
+            Beyond Beauty
+          </h1>
+        {% endif %}
+
+        {% if section.settings.description %}
+          <p class="cosmetic-hero__description">{{ section.settings.description }}</p>
+        {% else %}
+          <p class="cosmetic-hero__description">Nourishing products for skin, hair, and self-confidence.</p>
+        {% endif %}
+      </div>
+
+      {% if section.settings.show_button %}
+        <div class="cosmetic-hero__button-wrapper">
+          <a href="{{ section.settings.button_link | default: '/collections/all' }}" class="cosmetic-hero__button">
+            <span class="cosmetic-hero__button-text">
+              {% if section.settings.button_text %}
+                {{ section.settings.button_text }}
+              {% else %}
+                Shop Now & Shine
+              {% endif %}
+            </span>
+            <svg class="cosmetic-hero__button-icon" width="21" height="9" viewBox="0 0 21 9" fill="none">
+              <path d="M1.5 4.5L19.5 4.5M19.5 4.5L16.5 1.5M19.5 4.5L16.5 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Carousel Indicators -->
+    {% if section.settings.show_indicators %}
+      <div class="cosmetic-hero__indicators">
+        <div class="cosmetic-hero__indicator cosmetic-hero__indicator--active"></div>
+        <div class="cosmetic-hero__indicator"></div>
+        <div class="cosmetic-hero__indicator"></div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cosmetic Hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Care<br>Beyond Beauty"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Nourishing products for skin, hair, and self-confidence."
+    },
+    {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop Now & Shine"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image"
+    },
+    {
+      "type": "header",
+      "content": "Display Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_indicators",
+      "label": "Show carousel indicators",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cosmetic Hero"
+    }
+  ]
+}
+{% endschema %}
