@@ -1,0 +1,63 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero_slider": {
+      "type": "hero-slider",
+      "blocks": {
+        "slide_1": {
+          "type": "slide",
+          "settings": {
+            "title": "Care Beyond Beauty",
+            "description": "Nourishing products for skin, hair, and self-confidence.",
+            "button_text": "Shop Now & Shine",
+            "button_link": "/collections/skincare",
+            "background_type": "gradient",
+            "gradient_background": "linear-gradient(270deg, rgba(255, 218, 246, 1) 0%, rgba(237, 255, 218, 1) 100%)"
+          }
+        },
+        "slide_2": {
+          "type": "slide",
+          "settings": {
+            "title": "Natural Beauty",
+            "description": "Discover the power of natural ingredients for your skincare routine.",
+            "button_text": "Explore Collection",
+            "button_link": "/collections/natural",
+            "background_type": "gradient",
+            "gradient_background": "linear-gradient(270deg, rgba(218, 255, 236, 1) 0%, rgba(255, 218, 218, 1) 100%)"
+          }
+        },
+        "slide_3": {
+          "type": "slide",
+          "settings": {
+            "title": "Radiant Skin",
+            "description": "Transform your skin with our premium skincare solutions.",
+            "button_text": "Start Journey",
+            "button_link": "/collections/premium",
+            "background_type": "color",
+            "background_color": "#FFF0DA"
+          }
+        }
+      },
+      "block_order": [
+        "slide_1",
+        "slide_2", 
+        "slide_3"
+      ],
+      "settings": {
+        "enable_autoplay": true,
+        "autoplay_delay": 5000
+      }
+    }
+  },
+  "order": [
+    "hero_slider"
+  ]
+}
