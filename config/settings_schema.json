@@ -15,15 +15,6 @@
         "content": "t:settings_schema.theme_active.settings.welcome_message.content"
       },
       {
-        "type": "text",
-        "id": "purchase_code",
-        "label": "t:settings_schema.theme_active.settings.purchase_code.label"
-      },
-      {
-        "type": "paragraph",
-        "content": "t:settings_schema.theme_active.settings.purchase_code_help.content"
-      },
-      {
         "type": "paragraph",
         "content": "t:settings_schema.theme_active.settings.demo_import_help.content"
       },
