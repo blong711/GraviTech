@@ -76,7 +76,6 @@
           "type": "quantity_and_buy",
           "settings": {
             "show_dynamic_checkout": true,
-            "show_more_payment": true,
             "more_payment_text": "More payment options"
           }
         },
@@ -130,6 +129,7 @@
           "type": "size_guide",
           "settings": {
             "size_guide_text": "Size Guide",
+            "size_guide_source": "page",
             "size_guide_page": ""
           }
         }
@@ -153,7 +153,7 @@
       "settings": {
         "color_scheme": "",
         "width": "container",
-        "layout": "default",
+        "layout": "grid",
         "thumbnail_position": "left",
         "show_sticky_cart": true,
         "enable_video_loop": true,
